@@ -76,7 +76,7 @@ alert(resultado)
 /* y muchas mas operadores aritmeticos */
 
 
-✌✌✌✌✌CONCATENACION✌✌✌✌✌✌
+/* ✌✌✌✌✌CONCATENACION✌✌✌✌✌✌
 
 ES unir strings
 
@@ -84,7 +84,7 @@ saludo = "!hola pedro!"
 pregunta = " ¿como estas?"
 
 frase = saludo + pregunta;
-
+ */
 
 document.write(frase)
 
@@ -124,10 +124,38 @@ document.write(frase);
 si queremos poner comillas dobles en un escrito y ue queden esas comillas, entonces debemos poner comillas simples afuera, funciona igual con los `` */
 
 
+/* 
+OPERADORES LOGICOS: */
+let numero = 23;
+let numero2 = 23;
+
+document.write(numero == numero2) /* devuelve si es false o true */
 
 
+let numero = 23;
+let numero2 = 13;
+
+document.write(numero != numero2)
+
+///////////////////
+
+let numero = 23;
+let numero2 = 13;
+let texto = "23";
+let texto2 = "texto 2"
+
+document.write(texto == numero) /* me debe dar verdadero, por que este == no diferencia de tipos de datos, pero .. */
+
+let numero = 23;
+let numero2 = 13;
+let texto = "23";
+let texto2 = "texto 2"
+
+document.write(texto === numero)/* este deberia dar falso, por que este si diferencia entre tipos de datos y valor y ambos (texto y numero), no son los mismos. Tienen que ser estrictamente iguales === */
 
 
+!== /* si no es estrictamente igual */
+<> </> y mas operadores logicos como OR AND DOT
 
 
 
