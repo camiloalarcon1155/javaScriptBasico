@@ -281,8 +281,25 @@ var resultado = numero === 1 ? "si sou un uno" : "no soy un uno" ;
 
 console.log(resultado);
 
+🔥 SWITCH:
+// EL BREA ES IMPORTATE PARA QUE NO VALIDE TODOS LOS CASOS
 
 
+var numero = 1;
+
+switch (numero) {// sirve para validar casos, no si se cumple o no, coo en el if
+    case 1:
+        console.log("soy un uno");
+        break; //sirve para que no salte al siguiente caso
+    case 10:
+        console.log("soy un 10");
+        break;
+    case 100:
+        console.log("soy un 100");
+        break;
+    default:
+        console.log("no soy nada"); // por si no se cumple ninguno d elos anteriores casos
+} 
 
 
 
