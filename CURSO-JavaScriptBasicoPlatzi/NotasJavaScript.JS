@@ -252,10 +252,34 @@ export function solution(secreto) {
   return !(secreto <= 5);
 } //fue super corta
 
+//////////////////////////
+CONDICIONALES 
+IF 
 
+var edad = 18;
 
+if (edad === 18) {
+    console.log("puedes votar, sera tu primera vez")
+} else if (edad > 18) { 
+    console.log("vota de nuevo")
+} else {
+    console.log("ten fe, un dia votaras")
+} // es la forma de hacer un cndicional if
 
+// ahora tenenmos operador ternario:
 
+condition ? true : false;
+
+// ejemplo:
+
+var numero = 1;
+//quieo validar que ese numero sea true
+
+var resultado = numero === 1 ? "si sou un uno" : "no soy un uno" ;    
+
+//luego imprimo resultado
+
+console.log(resultado);
 
 
 
