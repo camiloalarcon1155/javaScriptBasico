@@ -7,7 +7,7 @@ true false /* valor booleaano */
 null
 unidentified /*  */
 
-VALORES NO PREMITIVOS(TIPO objeto):
+VALORES NO PRMITIVOS(TIPO objeto):
 
 [1, 2, 3]
 {nombre: "Camilo"}
@@ -282,12 +282,12 @@ var resultado = numero === 1 ? "si sou un uno" : "no soy un uno" ;
 console.log(resultado);
 
 🔥 SWITCH:
-// EL BREA ES IMPORTATE PARA QUE NO VALIDE TODOS LOS CASOS
+// EL BREAk ES IMPORTATE PARA QUE NO VALIDE TODOS LOS CASOS
 
 
 var numero = 1;
 
-switch (numero) {// sirve para validar casos, no si se cumple o no, coo en el if
+switch (numero) {// sirve para validar casos, no si se cumple o no, como en el if
     case 1:
         console.log("soy un uno");
         break; //sirve para que no salte al siguiente caso
@@ -303,16 +303,54 @@ switch (numero) {// sirve para validar casos, no si se cumple o no, coo en el if
 
 
 
-    
+/////
+😍 ARREGLOS
+
+// es una forma de formar estructura de datos
+// es una lista de datos.
+// se pueden guardar inclusive objetos.
+
+    var frutas = ["Manzana", "Platano", "Cereza", "fresa"]; // para acceder a este arreglo, se hace atravez de la variable.
+
+// si estuvieramos en la consola del navegador usariaos esto:
+
+console.log(frutas); //
+
+// como saber si un elemento tienen elementos adentro si yo no lo cree
+
+console.log(frutas.length); // asi se su longitud
+
+console.log(frutas[2]); // para accceder a las posiciones del arreglo.
+
+recordar: // siempre los arreglos inician desde posicon 0.
 
 
 
+var masFrutas = frutas.push("uvas") // hace que se empujen mas datos denro del arreglo
+
+
+// para borrar un ultimo elemento de m array
+
+var ultimo = frutas.pop("uvas"); //me borro el elemento "uvas"
+
+var nuevaLongitud = frutas.unshift("Peras");// la diferencia con push es que aqui se ingresa de primero
+
+var borrarFruta = frutas.shift("Peras");//borra primer elemento.
+
+var posicion = frutas.indexOf("Cereza"); //nos va a ayudar a ver la posicion del elemnto que le enviemos. ahora llamo la poscion:
+
+posicion // aqui ya nos arrojara la posicion Cereza
 
 
 
+❤ LOOPS. CICLOS
+
+// vamos a generar una funcion, y  miemtras a dentro de este lopp se cumpla una condicion o hasta que se rompa, el loop seguira haciendo su recorrido.
+
+loops.
+// en ultimas hay dos formas de loops, con una variable i y con for of que es con singular o plural
 
 
+🌫LOOPS. WHILE
 
-
-
-
+//// mientras lo que este entre parentesis sea verdad, lo que este dentro va a seguir corriendo

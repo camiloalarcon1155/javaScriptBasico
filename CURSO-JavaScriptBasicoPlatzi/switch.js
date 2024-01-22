@@ -58,3 +58,24 @@ function validacionPPP(parametro) {
     }
 
 }
+
+
+//ejercicio de platzi:
+
+
+export function solution(article) {
+    var parametro = article.toLowerCase();
+  switch (parametro) {
+    case "computadora":
+      console.log("Con mi computadora puedo programar usando JavaScript");
+      break;
+    case "celular":
+      console.log("En mi celular puedo aprender usando la app de Platzi");
+      break;
+    case "cable":
+      console.log("C¡Hay un cable en mi bota!");
+      break;
+    default:
+      console.log("Artículo no encontrado")
+    }
+}
