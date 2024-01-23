@@ -126,7 +126,7 @@ sucede cuando se declaran variables y funciones al  inicio del codigo, antes de 
 hoisting es diferente a hosting, hosting es pagar un DOMInio */
 
 console.log(miNombre);
-var miNombre = "Camilo";/* coo no esta declarada la varibale al prncipio, enonces el la declara y la deja undefined, por eso asi ya la inicialices despues, entonces te da undefined. */
+var miNombre = "Camilo";/* como no esta declarada la varibale al prncipio, enonces el la declara y la deja undefined, por eso asi ya la inicialices despues, entonces te da undefined. */
 
 
 var miNombre = undefined;
@@ -263,7 +263,7 @@ if (edad === 18) {
 } else if (edad > 18) { 
     console.log("vota de nuevo")
 } else {
-    console.log("ten fe, un dia votaras")
+    console.log("ten fe, un dia votaras")                                           
 } // es la forma de hacer un cndicional if
 
 // ahora tenenmos operador ternario:
@@ -354,3 +354,107 @@ loops.
 🌫LOOPS. WHILE
 
 //// mientras lo que este entre parentesis sea verdad, lo que este dentro va a seguir corriendo
+
+
+🔥🔥🔥🔥🔥🔥🔥🔥OBJETOS
+
+//JAVA SCRIP DISEÑADO EN PARADIGAM DE OBJETOS
+
+//es cm llevamos este mundo de objetos a un paradigma de objetos en java script
+
+//carro, tiene MediaStreamTrack, modelo, año de fabricacion. tiene llantas, puertas, etc
+
+//para escribir un objeto en java script
+
+var miAuto = {
+    //los objetos se manejan con propiedades(combinacion de palabras clave y valores)
+    marca: "Toyota",
+    modelo: "Corola",
+    annio: 2014 //tengo un obeto con 3 proiedades
+};
+
+
+//para acceder al objeto ponemos solo miAuto
+
+//Para acceder a las propiedades del objeto:
+
+miAuto.marca
+miAuto.annio
+
+//tabien se pueden generar funciones como propiedade del objetto. se llaman metodos de objetos.
+
+//ejemplo:
+
+var miAuto = {
+    //los objetos se manejan con propiedades(combinacion de palabras clave y valores)
+    marca: "Toyota",
+    modelo: "Corola",
+    annio: 2014, //tengo un obeto con 3 proiedades
+    detalleDelAuto: function (){ //esto es un metodo...una ffuncion que imprime en consola
+        console.log(`Auto ${this.modelo}  ${this.annio}`) //el this es una variable que hace referencia a su objeto. la forma de leerlo es this es mi auto.modelo, me va a taer el valor Toyota. el this hace referencia al mismo objeto. hay otros this, buscarlos...
+    }
+};
+
+//para ingresar a este metodo:
+miAuto.detalleDelAuto();
+
+// i quisiera generar ejemplo 30 objetos 30, 50 carros y quiero pasarlos a objetos, que hacer?
+
+//UNA FUNCION CONSTRUCTORA: Se genera un template de un objeto en donde vamos a generar ciertas opciones que son sus parametros y sus propiedades y despues vamos a poder hacer nuevas instancias con un operador especial.
+
+
+function auto(marca, modelo, annio) {
+    this.marca = marca;
+    this.modelo = modelo;
+    this.annio = annio;
+}
+
+// ya tenemos nuestra plantilla, ahora vamos a crear un objeto de ese template o plantilla. usaremos un operador llamado new, lo qu eva a hacer es generar una nueva istancia de nuestra funcion constructora y una instancia es generar un objeto que deriva de otro objeto.
+
+var autoNuevo = new auto("Tesla", "Model 3", 2020); // es la forma de generar un nuevo objeto que va a ser autoNuevo, con relacion al template que hemos construido de esta funcion constructra. aqui ya llenamos la informacion de un auto.
+
+var autoNuevo2 = new auto("NIISSAN","MODEL X", 2020);
+
+var autoNuevo3 = new auto("ERRNO","MODEL PER", 2023);
+
+//nos pone a hacer un loop donde se pueda ir llenando esta informacion de forma menos manual y mas auotomatica.
+
+//sta es mi idea:
+
+
+function carro(marca, modelo, annio) {
+    this.marca = marca;
+    this.modelo = modelo;
+    this.annio = annio; 
+}
+
+//var carroNuevo = new carro("renault", "toyota", 2024);
+
+
+function listarAutos(marcas, modelos, annios) {
+    var cantidadAutos = [];
+    for(var i = 0; i < 30; i++){
+        //var carroNuevo = new carro(marcas[i], modelos[i], annios[i]);
+        var carroN = new carro(marcas, modelos, annios);
+        var carroNuevo = carroN[i];
+        cantidadAutos.push(carroNuevo);
+        return cantidadAutos;
+}
+}
+
+var marcas = "RENAULT";
+var modelos = "MODELOONE";
+var annios = "2001";
+
+var sumandoAutos = listarAutos(marcas, modelos, 2024)
+console.log(sumandoAutos)
+
+
+
+
+
+for(var i = 0; i < 30; i++){
+    listarAutos[i](marca[i], modelo[i], annio[i])
+}
+
+console.log(listaDeAutos);
