@@ -421,40 +421,277 @@ var autoNuevo3 = new auto("ERRNO","MODEL PER", 2023);
 
 //sta es mi idea:
 
-
-function carro(marca, modelo, annio) {
-    this.marca = marca;
-    this.modelo = modelo;
-    this.annio = annio; 
+var totalMotos = [];
+function moto(PLACA, CILINDRAJE, COLOR) {
+    this.placa = PLACA;
+    this.cilindraje = CILINDRAJE;
+    this.color = COLOR;
 }
 
+for (i = 0; i < 5; i++){
+    
+var placa = prompt('Ingrese placa de su moto:   ');
+var cilindraje = prompt('Ingrese cilindraje de su moto:   ');
+var color = prompt('Ingrese color de su moto:   ');
+
+
+    var nuevaMoto = new moto(placa, cilindraje, color);
+    totalMotos.push(nuevaMoto);
+
+}
+
+///////////////////////////////////////////////
+// esta fue la idea de un tipo que parece que sabe:
+var ListaCarros = [];
+var cantidadAutos = 0;
+var cantRegistrados = 0;
+
+function carro(MARCA, MODELO, ANNIO) {
+    this.marca = MARCA;
+    this.modelo = MODELO;
+    this.annio = ANNIO; 
+}
+
+
+cantidadAutos = prompt("Cuantos autos deseas registrar hoy?")
 //var carroNuevo = new carro("renault", "toyota", 2024);
 
 
-function listarAutos(marcas, modelos, annios) {
-    var cantidadAutos = [];
-    for(var i = 0; i < 30; i++){
-        //var carroNuevo = new carro(marcas[i], modelos[i], annios[i]);
-        var carroN = new carro(marcas, modelos, annios);
-        var carroNuevo = carroN[i];
-        cantidadAutos.push(carroNuevo);
-        return cantidadAutos;
-}
-}
+while (cantRegistrados < cantidadAutos) {
+    let marca = prompt('Marca del auto:  ');
+    let modelo = prompt('Modelo del auto:  ');
+    let annio = prompt('año:  ');
 
-var marcas = "RENAULT";
-var modelos = "MODELOONE";
-var annios = "2001";
-
-var sumandoAutos = listarAutos(marcas, modelos, 2024)
-console.log(sumandoAutos)
-
-
-
-
-
-for(var i = 0; i < 30; i++){
-    listarAutos[i](marca[i], modelo[i], annio[i])
+    var carritoNuevo = new carro(marca, modelo, annio)
+    ListaCarros.push(carritoNuevo);
+    cantRegistrados++;
 }
 
-console.log(listaDeAutos);
+console.log("ListaCarros: " + ListaCarros);
+
+
+// esta la hizo alaguien que tiene mas conocimiento del tema:
+
+function auto (MARCA, MODELO, ANNIO){
+  this.marca = MARCA;
+  this.modelo = MODELO;
+  this.annio = ANNIO;
+}
+var autos = [];
+for(let i = 0 ; i < 30 ; i++){
+  var marca = prompt("Ingresa la marca del auto");
+  var modelo = prompt("Ingresa el modelo del auto");
+  var annio = prompt("Ingresa el año del auto");
+  autos.push(new auto (marca, modelo, annio));
+}
+
+for(let i = 0 ; i < autos.length ; i++){
+  console.log(autos[i]);
+}
+
+/* // ejercicio de platzi: En este desafío vas a recibir un objeto car como parámetro de la función solution.
+
+Este objeto puede contener diferentes propiedades. Debes asegurarte de que tenga la propiedad licensePlate (la placa del auto). Si sí la tiene, devuelve el objeto original con la propiedad drivingLicense como true. Si no la tiene, devuelve el objeto original con la propiedad drivingLicense como false.
+
+Input
+
+// Prueba 1
+solution({
+  color: 'red',
+  brand: 'Kia',
+});
+
+// Prueba 2
+solution({
+  color: 'gray',
+  brand: 'Chevrolet',
+  licensePlate: 'AAA111',
+});
+
+// Prueba 3
+solution({ licensePlate: 'RGB255'  });
+
+Output
+
+// Prueba 1
+{
+  color: 'red',
+  brand: 'Kia',
+  drivingLicense: false,
+}
+
+// Prueba 2
+{
+  color: 'gray',
+  brand: 'Chevrolet',
+  licensePlate: 'AAA111',
+  drivingLicense: true,
+}
+
+// Prueba 3
+{
+  licensePlate: 'RGB255',
+  drivingLicense: true,
+}
+ */
+
+//no entendi y busque la solucion de un platzi estudiante:
+
+function solution(car) {
+  if (car.licensePlate === null || car.licensePlate === undefined) {
+    car.drivingLicense = false;
+  }
+  else {
+    car.drivingLicense = true;
+  }
+  return car;
+}
+
+
+//A continuacion un ejemplo de un objeto y todo lo relacionado:
+
+//aquí tienes un ejemplo de cómo podrías crear un objeto de la clase Motocicleta en JavaScript con al menos 4 propiedades y 2 métodos:
+
+function Motocicleta(marca, modelo, color, cilindrada) {
+    this.marca = marca;
+    this.modelo = modelo;
+    this.color = color;
+    this.cilindrada = cilindrada;
+
+    this.arrancar = function() {
+        console.log("La motocicleta ha arrancado.");
+    };
+
+    this.detener = function() {
+        console.log("La motocicleta se ha detenido.");
+    };
+}
+
+// Crear una instancia de la clase Motocicleta
+var miMotocicleta = new Motocicleta("Honda", "CBR500R", "Rojo", 500);
+
+// Acceder a las propiedades y métodos
+console.log(miMotocicleta.marca);      // Honda
+console.log(miMotocicleta.modelo);     // CBR500R
+console.log(miMotocicleta.color);      // Rojo
+console.log(miMotocicleta.cilindrada); // 500
+
+miMotocicleta.arrancar();               // La motocicleta ha arrancado.
+miMotocicleta.detener();                // La motocicleta se ha detenido.
+
+
+//Aquí te dejo un ejemplo de cómo podrías crear cinco instancias adicionales de la clase Motocicleta:
+
+// Crear instancias adicionales de la clase Motocicleta
+var motocicleta1 = new Motocicleta("Suzuki", "GSX-R750", "Azul", 750);
+var motocicleta2 = new Motocicleta("Kawasaki", "Ninja 400", "Verde", 400);
+var motocicleta3 = new Motocicleta("Ducati", "Panigale V4", "Negro", 1103);
+var motocicleta4 = new Motocicleta("Yamaha", "YZF-R6", "Blanco", 600);
+var motocicleta5 = new Motocicleta("Harley-Davidson", "Iron 883", "Negro", 883);
+
+// Acceder a las propiedades y métodos de las instancias
+console.log(motocicleta1.marca);       // Suzuki
+console.log(motocicleta2.modelo);      // Ninja 400
+console.log(motocicleta3.color);       // Negro
+console.log(motocicleta4.cilindrada);  // 600
+
+motocicleta1.arrancar();                // La motocicleta ha arrancado.
+motocicleta2.detener();                 // La motocicleta se ha detenido.
+
+//En este ejemplo, he creado cinco instancias adicionales de la clase Motocicleta con diferentes valores para las propiedades. Puedes acceder a las propiedades y llamar a los métodos de cada instancia individualmente. Ajusta los valores según tus preferencias.
+
+//Puedes implementar una función llamada ingresarDatosMotocicletaque acepte la información del usuario como argumentos y utilice esos datos para crear una instancia de motocicleta. Luego, puedes llamar a esta función desde la consola del navegador para ingresar la información de cada motocicleta. Aquí está el código modificado:
+
+function Motocicleta(MARCA, MODELO, ANNIO) {
+  this.marca = MARCA;
+  this.modelo = MODELO;
+  this.annio = ANNIO;
+}
+
+var motocicletas = [];
+
+// Función para ingresar los datos de una motocicleta
+function ingresarDatosMotocicleta(marca, modelo, annio) {
+  motocicletas.push(new Motocicleta(marca, modelo, annio));
+}
+
+// Ejemplo de uso desde la consola del navegador:
+// ingresarDatosMotocicleta("Suzuki", "GSX-R750", 2020);
+// ingresarDatosMotocicleta("Kawasaki", "Ninja 400", 2022);
+
+// Imprimir la información de las motocicletas
+function imprimirInformacionMotocicletas() {
+  for (let i = 0; i < motocicletas.length; i++) {
+    console.log(`Motocicleta ${i + 1}:`, motocicletas[i]);
+  }
+}
+
+// Llamar a la función para imprimir información de las motocicletas
+// imprimirInformacionMotocicletas();
+
+// aqui luego se llena la nfo de cada motocicleta con la funcion ingresar datosmotocicleta
+
+IMPORTANTE
+//y para acceder a cada dato de la motocecletas me parece mejor usar el arreglo motocicletas[4].marca Y Si necesitas acceder a algo en particular, usar el for asi:
+// Suponiendo que tienes un arreglo de motocicletas llamado motocicletas
+for (var i = 0; i < motocicletas.length; i++) {
+  console.log("Motocicleta " + (i + 1) + " - Marca:", motocicletas[i].marca);
+} //Asegúrate de haber ingresado datos utilizando la función ingresarDatosMotocicleta antes de ejecutar este código.
+
+
+💖💖💖💖 Metodos de recorridos de ARREGLOS
+
+//1 metodo de recorridos de ARREGLOS:
+
+//creamos un arreglo con diferentes objetos:
+
+var articulos = [
+    { nombre: "bici", costo: 3000 },
+    { nombre: "tv", costo: 2500 },
+    { nombre: "libro", costo: 320 },
+    { nombre: "celular", costo: 10000 },
+    { nombre: "laptop", costo: 2300 },
+    { nombre: "teclado", costo: 10100 },
+    { nombre: "audifonos", costo: 24000 },
+    
+];//AQUI tengo mi areglo con objetos dentro. conmientre mas objetos haya, mas sentido tiene usar estos metodos
+
+//ahora vamos a ver los metodos para ayudar a recorrer el contenido de mi arreglo:
+
+//1METODO:filter va a validar si algo es verdad  o falso y va a generar un nuevo array.
+
+var articulosFiltrados = articulos.filter(function (articulo) { // este linea de codigo se ve mucho, mas adelante
+    return articulo.costo <= 500 // me traera todos los articulos con costo menor a 500 pesos, no modifica el anterior array
+}); //
+
+//2. METODO: ponemos de nuevo el array articulos en consola. map me va a ayudar a mapear ciertos articulos.
+
+var nombreArticulos = articulos.map(function (articulo) {
+    return articulo.nombre // le estoy pidiendo que me regrese, de todos los articulos el nombre de los articulos
+});
+
+//3 METODO:  FIND();
+//NOS VA Ayudar a encontrar algo dentro de un arrays, va  a generar un nuevo array con el valor que yo le estoy pasando si lo encuentra.
+
+var encuentraArticulo = articulos.find(function (articulo) {
+    return articulo.nombre === "laptop" // que me regrese el articulo que cumpla esa condicion y que me lo guarde en ese nuevo arreglo
+})/* Por si a alguien le quedó alguna duda con respecto a la diferencia entre find y filter:
+
+El método find () devuelve el primer valor que coincide de la colección. Una vez que coincida con el valor en los resultados, no verificará los valores restantes en la colección de matriz.
+
+El método filter () devuelve los valores coincidentes en una matriz de la colección. Verificará todos los valores de la colección y devolverá los valores coincidentes en una matriz. */
+
+//4 metodo: este no crea nuevo arreglo, solo filtra el que ya tenemos, sin modificarlo.
+
+articulos.forEach(function (articulo) { 
+    console.log(articulo.nombre) // que solo nos imprima el nombe de los articulos que tiene este arreglo
+});
+
+//5 METODO. nos va a regresar verdadero o falso, para objetos que cumplan esa condicion.
+
+var articulosBaratos = articulos.some(function (articulo) {
+    return articulo.costo <= 3000; // solo dira si es cierto o no, nnada mas
+});
+//sirve para validar articulos que tengan alguna promocion o fecha o cierto costo especifico. para eso servirian
+
+
